@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid</title>
+    <style>
+        body{
+            background-color: #C4D7A7;
+        }
+        header{
+            text-align: center;
+            border-bottom: 1px solid #79944F;
+        }
+        .grid-container{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            width: 100%;
+            gap: 60px;
+            margin: 40px auto;
+            padding: 20px 0px;
+            max-width: 1200px;
+        }
+        article img{
+            width: 100%;
+            max-height: 200px;
+            object-fit: cover;
+            border: 4px solid white;
+            border-radius: 10px;
+        }
+        .featured{
+            grid-column: span 3;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            align-items: center;
+            border-bottom: 1px solid #79944F;
+            padding-bottom: 40px;
+        }
+        .featured img{
+            width: 100%;
+            max-height: 400px;
+            object-fit: cover;
+            border: 4px solid white;
+            border-radius: 10px;
+
+        }
+        @media screen and (max-width:1000px){
+            article{
+                grid-column: span 3;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 20px;
+                align-items: center;
+            }
+            article img{
+               max-height: 400px;
+            }
+        }
+        @media screen and (max-width:850px){
+            .featured{
+                display: block;
+                padding: 40px;
+                border-bottom: 1px solid #79944F;
+                padding-bottom: 40px;
+        }
+            article{
+                display: block;
+                padding: 40px;
+            }
+            article img{
+               max-height: 400px;
+            }
+        }
+            
+        
+        
+    </style>
+</head>
+<body>
+    <header>
+        <h1>CSS Grid Website Layout</h1>
+    </header>
+    <main class="grid-container">
+        <article class="featured">
+            <img src="Images/Photography.jpg" alt="Photography">
+            <div>
+                <h2>Photography</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                Exercitationem unde aperiam alias iusto! Quas ipsum dolorum eius maxime sequi repudiandae.</p>
+            </div>
+        </article>
+        <article>
+            <img src="Images/Photography.jpg" alt="photography">
+            <div>
+                <h2>Photography</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                Exercitationem unde aperiam alias iusto! Quas ipsum dolorum eius maxime sequi repudiandae. 
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+                Dolor numquam unde non nam ad iusto distinctio tenetur commodi laborum eligendi. </p>
+            </div>
+        </article>
+        <article>
+            <img src="Images/waterfall.jpg" alt="Waterfall">
+            <div>
+                <h2>Waterfall</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                Exercitationem unde aperiam alias iusto! Quas ipsum dolorum eius maxime sequi repudiandae. 
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, ullam ab porro non magni sunt. </p>
+            </div>
+        </article>
+        <article>
+            <img src="Images/Night.jpg" alt="Night">
+            <div>
+                <h2>Night</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                Exercitationem unde aperiam alias iusto! Quas ipsum dolorum eius maxime sequi repudiandae. 
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, ullam ab porro non magni sunt. </p>
+            </div>
+        </article>
+        <article>
+            <img src="Images/mountainsnow.jpg" alt="Mountainsnow">
+            <div>
+                <h2>Mountain Snow</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                Exercitationem unde aperiam alias iusto! Quas ipsum dolorum eius maxime sequi repudiandae. 
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, ullam ab porro non magni sunt. </p>
+            </div>
+        </article>
+    </main>
+</body>
+</html>
