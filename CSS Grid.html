@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Grid website layout</title>
+    <style>
+        body{
+            margin: 0px;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: beige;
+        }
+        li{
+            list-style-type: none;
+        }
+        a{
+            text-decoration: none;
+            color: black;
+        }
+        .grid-container{
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-areas: 
+            'header'
+            'menubar'
+            'nav'
+            'article'
+            'aside'
+            'footer';
+        }
+        header{
+            border-bottom: 1px solid gray;
+            text-align: center;
+            grid-area: header;
+        }
+        .menubar{
+            border-bottom: 1px solid gray;
+            grid-area: menubar;
+        }
+        .menubar li{
+            display: inline-block;
+        }
+        nav{
+            padding: 10px;
+            border-bottom:1px solid gray;
+            line-height: 30px;
+            grid-area: nav;
+        }
+        nav li{
+            display: inline-block;
+        }
+        article img{
+            width: 100%;
+            object-fit: cover;
+        }
+        article{
+            padding: 20px;
+            grid-area: article;
+            border-bottom:1px solid gray;
+        }
+        article h2{
+            font-size: 60px;
+        }
+        aside{
+            padding: 30px;
+            border-left: 1px solid gray;
+            grid-area: aside;
+        }
+        footer{
+            grid-column: span 3;
+            padding: 20px;
+            text-align: center;
+            grid-area: footer;
+        }
+       
+        @media screen and (min-width:800px){
+            .grid-container{
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-areas: 
+            'header header header header'
+            'menubar menubar menubar menubar'
+            'nav article article article'
+            'aside aside aside aside'
+            'footer footer footer footer';
+            }
+            article{
+                border-bottom:1px solid gray;
+            }
+            nav{
+                border-right: 1px solid gray;
+            }
+            aside{
+                border-bottom:1px solid gray;  
+            }
+        }
+        @media screen and (min-width:950px){
+            .grid-container{
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            grid-template-areas: 
+            'header header header header header'
+            'menubar menubar menubar menubar menubar'
+            'nav article article article aside'
+            'footer footer footer footer footer';
+            }
+            nav{
+            border-right: 1px solid gray;
+            }
+            
+        }
+            
+    </style>
+</head>
+<body>
+    <div class="grid-container">
+        <header>
+            <h1>name of website</h1>
+        </header>
+        <div class="menubar">
+            <ul>
+                <li><a href="">Link</a></li>
+                <li><a href="">Link</a></li>
+                <li><a href="">Link</a></li>
+                <li><a href="">Link</a></li>
+            </ul>
+        </div>
+        <nav>
+            <li>Link 1</li>
+            <li>Link 2</li>
+            <li>Link 3</li>
+            <li>Link 4</li>
+            <li>Link 5</li>
+        </nav>
+        <article>
+            <h2>Name of article</h2>
+            <img src="Images/waterfall.jpg" alt="waterfall">
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptas, beatae voluptatum odit animi laudantium rerum sit numquam. Beatae dolor reprehenderit quisquam voluptatibus nulla dolorum nihil! Nisi consequatur magni enim illum blanditiis error placeat, itaque numquam veniam cum ea repellendus, accusantium eius, voluptatem quod reprehenderit. 
+            Velit blanditiis quisquam ipsum consequatur animi consequuntur totam esse aliquam adipisci placeat incidunt enim hic rem, maiores sunt vero architecto quod necessitatibus voluptas ex ratione mollitia! Minima eius ad ut facere, commodi atque illum quod, sed magnam ipsa dolores dolorum hic quia maiores reprehenderit voluptatibus rerum in nam iusto libero officiis? Possimus totam laudantium ea voluptate!</p>
+        </article>
+        <aside>
+            <li><h2>Lorem ipsum dolor sit amet.</h2></li>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, eligendi?</p>
+            <li><h2>Lorem ipsum dolor sit amet.</h2></li>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, eligendi?</p>
+            <li><h2>Lorem ipsum dolor sit amet.</h2></li>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, eligendi?</p>
+        </aside>
+        <footer>
+            webite@copyright
+        </footer>
+    </div>
+</body>
+</html>
